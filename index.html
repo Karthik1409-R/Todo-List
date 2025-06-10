@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">   
+</head>
+<body style="font-family: Poppins, sans-serif;">
+    <!-- Main Container -->
+
+        <div class="">
+            <h1 class="text-[24px] font-bold flex justify-center p-6 items-center gap-2"><span>📝</span>To-Do List</h1>
+            <div class="flex justify-center p-6 pt-3 flex-col md:px-36 lg:px-[272px] xl:px-[400px] 2xl:px-[528px]">
+                <input type="text" id="taskInput" placeholder="Enter your task" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500">
+
+                <div class="flex justify-center pt-2 gap-2.5">
+                    <input type="date" id="dateInput" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md">
+
+                    <select name="" id="" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md">
+                        <option value="To do">To do</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">Done</option>
+                    </select>
+
+                    
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="addTask()" class="w-full bg-blue-500 text-white p-2 px-3 rounded-md">+Add Task</button>
+                </div>
+            </div>  
+            <hr class="">
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mx-auto max-w-7xl p-6">
+
+            <!-- To Do Column -->
+            <div>
+            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2">🎯 To do</h2>
+            <div id="todo" class="space-y-3"></div>
+            </div>
+
+            <!-- Doing Column -->
+            <div>
+            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2">🌟 Doing</h2>
+            <div id="doing" class="space-y-3"></div>
+            </div>
+
+            <!-- Done Column -->
+            <div>
+            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2">✅ Done</h2>
+            <div id="done" class="space-y-3"></div>
+            </div>
+
+        </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</body>
+</html>
