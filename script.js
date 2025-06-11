@@ -33,7 +33,7 @@ function addTask() {
 
     // Create button wrapper
     const buttonGroup = document.createElement("div");
-    buttonGroup.className = "flex flex-col  gap-2";
+    buttonGroup.className = "flex flex-col gap-2";
 
     // Edit button
     const editBtn = document.createElement("button");
