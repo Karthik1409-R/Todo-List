@@ -20,25 +20,39 @@ function addTask() {
     const contentWrapper = document.createElement('div');
     contentWrapper.className = "flex flex-col gap-2";
 
+    const textContentWithCheckBox = document.createElement('div');
+    textContentWithCheckBox.className = 'flex gap-2 items-center'
+
     const taskText = document.createElement('span');
     taskText.textContent = text;
     taskText.className = "text-gray-800 text-[20px] font-medium";
+
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox'
+    checkBox.className = 'w-4 h-4 cursor-pointer'
+
+    checkBox.onchange = () => {
+    taskText.classList.toggle("line-through", checkBox.checked);
+    };
+
+    textContentWithCheckBox.appendChild(checkBox);
+    textContentWithCheckBox.appendChild(taskText);
 
     const taskDate = document.createElement("span");
     taskDate.textContent = date ? `📅 ${date}` : "";
     taskDate.className = "text-sm text-gray-500";
 
-    contentWrapper.appendChild(taskText);
+    contentWrapper.appendChild(textContentWithCheckBox);
     if (date) contentWrapper.appendChild(taskDate);
 
     // Create button wrapper
     const buttonGroup = document.createElement("div");
-    buttonGroup.className = "flex flex-col gap-2";
+    buttonGroup.className = "flex flex-col gap-2 ";
 
     // Edit button
     const editBtn = document.createElement("button");
-    editBtn.textContent = "Edit";
-    editBtn.className = "bg-green-500 text-white text-md  rounded-sm";
+    editBtn.innerHTML = `<i class="fa-solid fa-pen-to-square"></i>`;
+    editBtn.className = "text-green-500 text-lg";
     editBtn.onclick = () => {
         const newText = prompt("Edit your task:", taskText.textContent);
         if (newText !== null) {
@@ -48,8 +62,8 @@ function addTask() {
 
     // Delete button
     const deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = "Delete";
-    deleteBtn.className = "bg-red-500 text-white text-md px-3 rounded-sm";
+    deleteBtn.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+    deleteBtn.className = "text-red-500 text-lg";
     deleteBtn.onclick = () => taskCard.remove();
 
     buttonGroup.appendChild(editBtn);
@@ -58,6 +72,7 @@ function addTask() {
     // Add to task card
     taskCard.appendChild(contentWrapper);
     taskCard.appendChild(buttonGroup);
+
 
     // Append to correct column
     if (status === "to do") {
