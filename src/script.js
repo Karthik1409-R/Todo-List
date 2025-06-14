@@ -89,3 +89,12 @@ function addTask() {
     statusSelect.value = "To do";
 
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const backBtn = document.getElementById("back-btn");
+    if (backBtn) {
+        backBtn.addEventListener("click", () => {
+            window.location.href = "home.html";
+        });
+    }
+});

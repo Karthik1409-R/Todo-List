@@ -7,7 +7,9 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
       },
     },
+    screens: {
+      '2xl-custom': '1440px', // ✅ Your custom screen
+    },
   },
   plugins: [],
 };
-
