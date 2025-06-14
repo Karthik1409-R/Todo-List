@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>Planify</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Autour+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="output.css">   
+    <link rel="stylesheet" href="output.css">
 </head>
-<body class="bg-gradient-to-r from-black via-gray-600 to-black">
-
+<body>
     <!-- Header -->
 
     <header class="fixed top-0 w-full z-50  shadow-gray-700 shadow-md">
@@ -21,65 +21,310 @@
             <a href="#">
             <h1 class="text-white text-3xl font-extrabold" style="font-family:Tangerine,cursive;">Planify</h1>
             </a>
+            <button href="#" id="menubar" onclick="changeIcon()">
+            <i class="fa-solid fa-bars text-white text-2xl lg:hidden"></i>
+            </button>
 
-            <div>
-                <button id="back-btn"><a class="text-white cursor-pointer" style="font-family: Poppins,sans-serif;">Back</a></button>
+            <div class="hidden lg:block">
+                <ul class="lg:flex lg:text-white gap-8" style="font-family: Poppins,sans-serif;">
+                    <a href="#home" class="hover:text-yellow-300 transition-all duration-300"><li>Home</li></a>
+                    <a href="#about" class="hover:text-yellow-300 transition-all duration-300"><li>About</li></a>
+                    <a href="#features" class="hover:text-yellow-300 transition-all duration-300"><li>Features</li></a>
+                    <a href="#testimonials" class="hover:text-yellow-300 transition-all duration-300"><li>Testimonials</li></a>
+                    <a href="#contact" class="hover:text-yellow-300 transition-all duration-300"><li>Contact</li></a>
+                </ul>
             </div>
         </div>
-
+ 
+        
+        <nav id="navbar" class="hidden bg-gradient-to-r from-gray-800 via-black to-gray-800 p-5 lg:hidden">
+            <ul class="flex flex-col gap-3 text-white" style="font-family: Poppins, sans-serif;">
+                <a href="#home" class="py-2"><li class="flex justify-between items-center">Home <span class="text-2xl">></span></li></a>
+                <a href="#about" class="py-2"><li class="flex justify-between items-center">About <span class="text-2xl">></span></li></a>
+                <a href="#features" class="py-2"><li class="flex justify-between items-center">Features <span class="text-2xl">></span></li></a>
+                <a href="#testimonials" class="py-2"><li class="flex justify-between items-center">Testimonials <span class="text-2xl">></span></li></a>
+                <a href="#contact" class="py-2"><li class="flex justify-between items-center">Contact <span class="text-2xl">></span></li></a>            
+            </ul>
+        </nav>
     </header>
-    
-    <!-- Main Container -->
 
-        <div class="">
-            <h1 class="text-[24px] font-bold flex justify-center p-6 items-center gap-2 text-cyan-300 pt-[100px]" style="font-family:Autour One, system-ui;"><span>📝</span>To-Do List</h1>
-            <div class="flex justify-center p-6 pt-3 flex-col md:px-36 lg:px-[272px] xl:px-[400px] 2xl:px-[528px]">
-                <input type="text" id="taskInput" placeholder="Enter your task" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md focus:outline-none focus:ring-1 focus:ring-orange-500" style="font-family: Poppins, sans-serif;">
+    <!-- Hero Section -->
 
-                <div class="flex justify-center pt-2 gap-2.5" style="font-family: Poppins, sans-serif;">
-                    <input type="date" id="dateInput" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md">
+    <section class="bg-gradient-to-r from-black via-gray-800 to-black pt-[77px]" id="home">
+        <div class=" p-5 px-6 flex flex-col gap-5 lg:flex-row lg:justify-between lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-14">
+            <div class="text-white flex flex-col gap-4 lg:w-[440px] xl:w-[520px] xl:gap-7">
+                <h1 class="text-orange-400 text-5xl font-extrabold lg:text-6xl" style="font-family:Tangerine,cursive;">Planify</h1>
+                <h1 class="text-cyan-300 font-bold text-[22px] lg:text-3xl xl:text-4xl" style="font-family:Autour One, system-ui;">Small steps every day lead to big results.</h1>
+                <p style="font-family: Poppins,sans-serif;">Our To-Do List app is your daily companion for organizing tasks, managing goals, and staying on top of what matters most. Whether it's personal errands, work responsibilities, or long-term goals, our intuitive and powerful interface helps you plan your day — your way.</p>
+                <button class="bg-blue-500 p-3 rounded-lg mt-4 md:w-[200px] hover:bg-white hover:text-black transition-all duration-300"  style="font-family: Poppins,sans-serif;" id="start-btn">Get start for free</button>
+            </div>
 
-                    <select name="" id="" class="w-full border-[1px] border-gray-400 p-2 px-3 rounded-md" >
-                        <option value="To do">To do</option>
-                        <option value="Doing">Doing</option>
-                        <option value="Done">Done</option>
-                    </select>
+            <div class="flex justify-center items-center pt-6 xl:pt-0  xl:mr-20">
+                <img src="https://img.pikbest.com/png-images/20240703/a-graphic-designers-man-working-on-a-laptop-at-office-_10648497.png!w700wp" alt="" class="md:w-[400px] md:h-[400px] transform scale-x-[-1] 2xl:w-[488px] 2xl:h-[488px]" >
+            </div>
+        </div>
+    </section>
 
-                    
+
+    <!-- About Section -->
+
+    <section class="scroll-mt-[77px] bg-gradient-to-r from-gray-800 via-black to-gray-800 p-5 px-6 lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-14" id="about">
+        <div class="flex flex-col gap-7 2xl:gap-9">
+            <div class="" id="">
+                <a href=""><h1 class="text-3xl text-orange-400 font-bold xl:text-4xl" style="font-family: Poppins,sans-serif;">About</h1></a>
+            </div>
+
+            <div class="text-white flex flex-col gap-5 lg:flex-row xl:gap-6 2xl:gap-7">
+                <div class="flex flex-col gap-2 lg:border-white lg:border-2 lg:p-6 lg:rounded-xl xl:gap-3 2xl:gap-5">
+                    <h5 class="text-cyan-300 font-bold xl:text-[24px]" style="font-family:Autour One, system-ui;">Stay Organized, Stay Ahead</h5>
+                    <p class="2xl:text-[20px]" style="font-family: Poppins,sans-serif;">Planify is not just a to-do list—it's your personal productivity partner. Designed to bring structure to your day, it helps you capture ideas, plan your tasks, and keep your goals within reach. Whether you're managing daily chores or long-term projects, Planify brings clarity and control to your workflow.</p>
+                </div>
+                
+                <div class="flex flex-col gap-2 lg:border-white lg:border-2 lg:p-6 lg:rounded-xl xl:gap-3 2xl:gap-5">
+                    <h5 class="text-cyan-300 font-bold xl:text-[24px]" style="font-family:Autour One, system-ui;">Built for Simplicity and Speed</h5>
+                    <p class="2xl:text-[20px]" style="font-family: Poppins,sans-serif;">We believe productivity tools should simplify your life, not complicate it. With a sleek, minimal design and intuitive features, Planify makes task management effortless. Set priorities, track deadlines, and organize everything in one place—whether you’re working solo, studying, or collaborating with a team.</p>
                 </div>
 
-                <div class="pt-2">
-                    <button onclick="addTask()" class="w-full bg-blue-500 text-white p-2 px-3 rounded-md" style="font-family: Poppins, sans-serif;">+Add Task</button>
+                <div class="flex flex-col gap-2 lg:border-white lg:border-2 lg:p-6 lg:rounded-xl xl:gap-3 2xl:gap-5">
+                    <h5 class="text-cyan-300 font-bold xl:text-[24px]" style="font-family:Autour One, system-ui;">Progress Made Practical</h5>
+                    <p class="2xl:text-[20px] 2xl:mt-9" style="font-family: Poppins,sans-serif;">Every big goal starts with small steps. Planify empowers you to take action one task at a time, building momentum with every checkmark. With built-in reminders, status tracking, and flexible views, you’ll always know what’s next—so you can focus on what matters most.</p>
                 </div>
+            </div>
+        </div>        
+    </section>
+
+    <!-- Features -->
+
+    <section class="bg-gradient-to-r from-black via-gray-800 to-black scroll-mt-[77px]" id="features">
+        <div class="p-5 px-6 flex flex-col gap-7 lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-14 2xl:gap-9">
+            <div class="">
+                <a href=""><h1 class="text-3xl text-orange-400 font-bold xl:text-4xl" style="font-family: Poppins,sans-serif;">Features</h1></a>
             </div>  
-            <hr class="">
+            
+            <div class="flex flex-col gap-10 lg:gap-14">
+                <div class="flex flex-col gap-5 items-center lg:flex-row lg:gap-24 xl:justify-between">
+                    <p class="bg-gray-600 text-white p-6 font-semibold rounded-tl-3xl rounded-br-3xl md:w-[650px] lg:w-[450px] lg:ml-6 xl:w-[520px] xl:text-[20px] 2xl:w-[600px] 2xl:text-2xl 2xl:p-8" style="font-family: Poppins,sans-serif;">Planify helps you stay organized and focused. Add, edit, and check off tasks with ease in a clean and simple interface.</p>
+                    <img src="https://projectsly.com/images/task-management-system-screenshot-1.png?v=1691124479409199525" alt="" class="rounded-xl md:w-[350px] md:h-[250px] xl:w-[450px] xl:h-[350px] xl:mr-6 2xl:mr-24">
+                </div>
 
+                <div class="flex flex-col gap-5 items-center lg:flex-row-reverse lg:gap-24 xl:justify-between">
+                    <p class="bg-gray-600 text-white p-6 font-semibold rounded-tl-3xl rounded-br-3xl md:w-[650px] lg:w-[450px] lg:mr-6 xl:w-[520px] xl:text-[20px] 2xl:w-[600px]  2xl:text-2xl 2xl:p-8" style="font-family: Poppins,sans-serif;">Track your tasks by status — To Do, Doing, or Done. Stay on top of deadlines, manage priorities, and see progress clearly.</p>
+                    <img src="https://www.shutterstock.com/image-photo/back-view-young-european-businesswoman-600nw-2274141343.jpg" alt="" class="rounded-xl md:w-[350px] md:h-[250px] xl:w-[450px] xl:h-[350px] xl:ml-6  2xl:ml-24">
+                </div>
+
+                <div class="flex flex-col gap-5 items-center lg:flex-row lg:gap-24 xl:justify-between">
+                    <p class="bg-gray-600 text-white p-6 font-semibold rounded-tl-3xl rounded-br-3xl md:w-[650px]  lg:w-[450px] lg:ml-6 xl:w-[520px] xl:text-[20px] 2xl:w-[600px]  2xl:text-2xl 2xl:p-8" style="font-family: Poppins,sans-serif;">Built for speed and simplicity, Planify works on all devices, helping you get more done — one task at a time.</p>
+                    <img src="https://media.licdn.com/dms/image/v2/C5612AQHlJKdu4KCznA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1549797078901?e=2147483647&v=beta&t=KfmafqGJxb-Eh1ButdeKEDg1TaoggtUUZIA6gd36pF4" alt="" class="rounded-xl md:w-[350px] md:h-[250px] xl:w-[450px] xl:h-[350px]  xl:mr-6 2xl:mr-24">
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mx-auto max-w-7xl p-6">
+    <!-- Testmonials -->
 
-            <!-- To Do Column -->
-            <div>
-            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2 text-cyan-300" style="font-family:Autour One, system-ui;">🎯 To do</h2>
-            <div id="todo" class="space-y-3"></div>
+    <section class="bg-gradient-to-r from-gray-800 via-black to-gray-800 scroll-mt-[77px]" id="testimonials">
+        <div class="p-5 px-6 flex flex-col gap-7 lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-14 2xl:gap-9">  
+            <div class="">
+                <a href=""><h1 class="text-3xl text-orange-400 font-bold xl:text-4xl" style="font-family: Poppins,sans-serif;">Testimonials</h1></a>
             </div>
 
-            <!-- Doing Column -->
-            <div>
-            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2 text-cyan-300" style="font-family:Autour One, system-ui;">🌟 Doing</h2>
-            <div id="doing" class="space-y-3"></div>
-            </div>
+            <div class="flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-10 xl:grid-cols-3 2xl:grid-cols-4">
 
-            <!-- Done Column -->
-            <div>
-            <h2 class="text-xl font-bold mb-4 flex items-center justify-center gap-2 text-cyan-300" style="font-family:Autour One, system-ui;">✅ Done</h2>
-            <div id="done" class="space-y-3"></div>
-            </div>
+                <div class="p-6 bg-white flex flex-col items-center gap-2 ">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQG7_iL1rnsbYg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731091809929?e=2147483647&v=beta&t=VDGw9alSp0XdhN3fuvO9n7Njt77lm4sy68dSigmOMj4" alt="" class="w-[80px] h-[80px] rounded-full">
+                    <p style="font-family: Poppins,sans-serif;" class="font-bold">Aarav Mehta</p>
+                    <p style="font-family: Poppins,sans-serif;">Software Engineer, Bengaluru</p>
+                    <p style="font-family: Poppins,sans-serif;">Planify has streamlined my daily routine. I love how intuitive it is — I can focus on coding instead of organizing.</p>
+                    <div class="text-yellow-300">
+                        <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                    </div>
+                </div>
 
+                <div class="p-6 bg-white flex flex-col items-center gap-2 ">
+                    <img src="https://media.licdn.com/dms/image/v2/C5603AQHx3u4Wbq0uAQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517472170667?e=2147483647&v=beta&t=t0cKy_PkIjcee07CdmbEpEbr28YxG5YVYU8REobi-00" alt="" class="w-[80px] h-[80px] rounded-full">
+                    <p style="font-family: Poppins,sans-serif;" class="font-bold">Diya Sharma</p>
+                    <p style="font-family: Poppins,sans-serif;">Marketing Manager, Delhi</p>
+                    <p style="font-family: Poppins,sans-serif;">With Planify, juggling campaign deadlines has become stress-free. It’s like having a personal assistant!</p>
+                    <div class="text-yellow-300">
+                        <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white flex flex-col items-center gap-2 ">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFh3wJld7eJ6Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1725351688493?e=2147483647&v=beta&t=-y30yRvOhMqM708vVuIb368wsoAoF4Yfu_-Ngor7vso" alt="" class="w-[80px] h-[80px] rounded-full">
+                    <p style="font-family: Poppins,sans-serif;" class="font-bold">Rahul Verma</p>
+                    <p style="font-family: Poppins,sans-serif;">UX Designer, Mumbai</p>
+                    <p style="font-family: Poppins,sans-serif;">The clean interface and smooth animations of Planify make planning a joy. It’s productivity with style.</p>
+                    <div class="text-yellow-300">
+                        <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-white flex flex-col items-center gap-2 xl:col-start-2 2xl:col-start-4">
+                    <img src="https://img.freepik.com/free-photo/front-view-business-woman-suit_23-2148603018.jpg?semt=ais_hybrid&w=740" alt="" class="w-[80px] h-[80px] rounded-full">
+                    <p style="font-family: Poppins,sans-serif;" class="font-bold">Sneha Kapoor</p>
+                    <p style="font-family: Poppins,sans-serif;">Entrepreneur, Hyderabad</p>
+                    <p style="font-family: Poppins,sans-serif;">Planify keeps my business goals clear and manageable. It’s simple, powerful, and keeps me on track every day.</p>
+                    <div class="text-yellow-300">
+                        <span><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>  
 
-    <!-- Scripts -->
+    <!-- Contact -->
+
+    <section class="bg-gradient-to-r from-black via-gray-800 to-black scroll-mt-[77px]" id="contact">
+        <div class="p-5 px-6 flex flex-col gap-7 lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-14 2xl:gap-9">
+            <div class="">
+                <a href=""><h1 class="text-3xl text-orange-400 font-bold xl:text-4xl" style="font-family: Poppins,sans-serif;">Contact</h1></a>
+            </div>
+
+                <div class="flex items-center justify-center" style="font-family: Poppins,sans-serif;">
+                    <form class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md space-y-6" onsubmit="return sendEmail();" id="contact-form">
+                        <h2 class="text-2xl font-bold text-center text-gray-800">Contact Us</h2>
+
+                        <div>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 py-2 placeholder-gray-500" required
+                        />
+                        </div>
+
+                        <div>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 py-2 placeholder-gray-500" required
+                        />
+                        </div>
+
+                        <div>
+                        <textarea
+                            placeholder="Message"
+                            name="message"
+                            rows="4"
+                            class="w-full border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 py-2 placeholder-gray-500 resize-none" required
+                        ></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                        <button
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-violet-700 text-white py-2 rounded shadow-md hover:bg-gradient-to-l hover:from-blue-600 hover:to-violet-700 hover:transition-all hover:duration-300">
+                            Submit
+                        </button>
+                        </div>
+                    </form>
+                </div>            
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+
+    <footer class="bg-gray-800">
+        <div class="p-5 px-6 flex flex-col gap-6 lg:px-10 lg:py-8 xl:px-16 2xl:px-20 2xl:py-4 2xl:gap-9">
+            <div class="flex flex-col gap-3 md:items-center md:flex-row md:justify-between">
+                <div class="flex flex-col gap-3">
+                    <a href="#">
+                        <h1 class="text-white text-3xl font-extrabold flex items-center justify-center" style="font-family:Tangerine,cursive;">Planify</h1>
+                    </a>
+
+                    <p class="text-white flex items-center justify-center text-[14px]" style="font-family: Poppins,sans-serif;">Make Your Experience better Everyday</p>
+                </div>
+
+                <div class="flex flex-col gap-3" style="font-family: Poppins,sans-serif;">
+                    <ul class="flex text-white text-[14px] items-center justify-center gap-3">
+                        <a href="#home" class="hover:text-yellow-300"><li>Home</li></a>
+                        <a href="#about" class="hover:text-yellow-300"><li>About</li></a>
+                        <a href="#features" class="hover:text-yellow-300"><li>Features</li></a>
+                        <a href="#contact" class="hover:text-yellow-300"><li>Contact</li></a>
+                    </ul>
+
+                    <div class="flex justify-center items-center gap-5 text-white text-2xl">
+                        <a href="https://www.linkedin.com/in/karthik-ramamoorthy" class="hover:text-blue-400" id="linkedIn-btn"><i class="fa-brands fa-linkedin-in" ></i></a>
+                        <a href="https://github.com/Karthik1409-R" class="hover:text-gray-400" id="Github-btn"><i class="fa-brands fa-github" ></i></a>
+                        <a href="https://www.instagram.com/bboy__lucky__3k/" class="hover:text-pink-400" id="instagram-btn"><i class="fa-brands fa-instagram" ></i></a>
+                        <a href="https://x.com/KarthikR1621380" class="hover:text-blue-300" id="twitter-btn"><i class="fa-brands fa-twitter" ></i></a>                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600"></div>
+            
+            <div class="flex items-center justify-center text-center">
+                <p class="text-white text-[14px]" style="font-family: Poppins, sans-serif;">&copy 2025 Planify. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
+
+    <script>
+                            // Menu bar 
+            function changeIcon() {
+                    const menubar = document.getElementById('menubar');
+                    const icon = menubar.querySelector('i');
+                    const navbar = document.getElementById('navbar');
+
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-xmark');
+                    navbar.classList.toggle('hidden');
+                }
+                document.querySelectorAll('#navbar a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        const menubar = document.getElementById('menubar');
+                        const icon = menubar.querySelector('i');
+                        const navbar = document.getElementById('navbar');
+
+                        if (!navbar.classList.contains('hidden')) {
+                            navbar.classList.add('hidden');
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+
+            // Redirect button
+            document.addEventListener("DOMContentLoaded", function () {
+                const startBtn = document.getElementById("start-btn");
+                if (startBtn) {
+                    startBtn.addEventListener("click", () => {
+                        window.location.href = "./src/todo.html";
+                    });
+                }
+                
+
+                // Init EmailJS
+                emailjs.init("E2tR2S2lZBlXPkzOm");
+
+                // Contact form submit
+                const contactForm = document.getElementById('contact-form');
+                if (contactForm) {
+                    contactForm.addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        emailjs.sendForm('service_0ighv7r', 'template_480rfib', this)
+                            .then(function (response) {
+                                alert('Email sent successfully!');
+                                console.log('SUCCESS!', response.status, response.text);
+                            }, function (error) {
+                                alert('FAILED to send email.');
+                                console.log('FAILED...', error);
+                            });
+                    });
+                }
+            });
+
+
+    </script>
+
 </body>
 </html>
