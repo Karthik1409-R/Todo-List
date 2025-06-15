@@ -8,7 +8,7 @@ module.exports = {
       },
     },
     screens: {
-      '2xl-custom': '1440px', // ✅ Your custom screen
+      '2xl-custom': '1440px',
     },
   },
   plugins: [],

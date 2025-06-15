@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const startBtn = document.getElementById("start-btn");
     if (startBtn) {
         startBtn.addEventListener("click", () => {
-            window.location.href = "./src/todo.html";
+            window.location.href = "./todo.html";
         });
     }
     

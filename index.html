@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planify</title>
-    <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./src/input.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Autour+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="./dist/output.css">
 </head>
 <body>
     <!-- Header -->
@@ -21,7 +20,7 @@
             <a href="#">
             <h1 class="text-white text-3xl font-extrabold" style="font-family:Tangerine,cursive;">Planify</h1>
             </a>
-            <button href="#" id="menubar" onclick="changeIcon()">
+            <button id="menubar" onclick="changeIcon()">
             <i class="fa-solid fa-bars text-white text-2xl lg:hidden"></i>
             </button>
 
@@ -265,66 +264,7 @@
     </footer>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./src/script.js"></script>
-
-    <!-- <script>
-                            // Menu bar 
-            function changeIcon() {
-                    const menubar = document.getElementById('menubar');
-                    const icon = menubar.querySelector('i');
-                    const navbar = document.getElementById('navbar');
-
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-xmark');
-                    navbar.classList.toggle('hidden');
-                }
-                document.querySelectorAll('#navbar a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        const menubar = document.getElementById('menubar');
-                        const icon = menubar.querySelector('i');
-                        const navbar = document.getElementById('navbar');
-
-                        if (!navbar.classList.contains('hidden')) {
-                            navbar.classList.add('hidden');
-                            icon.classList.remove('fa-xmark');
-                            icon.classList.add('fa-bars');
-                        }
-                    });
-                });
-
-            // Redirect button
-            document.addEventListener("DOMContentLoaded", function () {
-                const startBtn = document.getElementById("start-btn");
-                if (startBtn) {
-                    startBtn.addEventListener("click", () => {
-                        window.location.href = "./src/todo.html";
-                    });
-                }
-                
-
-                // Init EmailJS
-                emailjs.init("E2tR2S2lZBlXPkzOm");
-
-                // Contact form submit
-                const contactForm = document.getElementById('contact-form');
-                if (contactForm) {
-                    contactForm.addEventListener('submit', function (e) {
-                        e.preventDefault();
-
-                        emailjs.sendForm('service_0ighv7r', 'template_480rfib', this)
-                            .then(function (response) {
-                                alert('Email sent successfully!');
-                                console.log('SUCCESS!', response.status, response.text);
-                            }, function (error) {
-                                alert('FAILED to send email.');
-                                console.log('FAILED...', error);
-                            });
-                    });
-                }
-            });
-
-
-    </script> -->
+    <script src="./script.js"></script>
 
 </body>
 </html>
